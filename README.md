@@ -190,7 +190,7 @@ Centralized color system in `src/styles/colors.ts`:
 
 - Full TypeScript coverage
 - Strict type checking enabled
-- Interfaces for all data structures
+- Types for all data structures
 - Generic store factory with type inference
 
 ### Styled Components

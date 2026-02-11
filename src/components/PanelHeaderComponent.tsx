@@ -8,7 +8,7 @@ import {
   IconButton,
 } from "@/styles";
 
-interface PanelHeaderComponentProps {
+type PanelHeaderComponentProps = {
   title: string;
   icon: ReactNode;
   onClose: () => void;
