@@ -46,7 +46,7 @@ export const createElementStore = <
       store.items = result;
       const baseUrl = elementType ? `/api/${elementType}/items/reorder` : "/api/items/reorder";
       store.simulateApiCall("PUT", baseUrl, {
-        items: store.items,
+        items: toJS(store.items),
       });
     },
 
