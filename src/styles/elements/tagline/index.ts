@@ -86,6 +86,10 @@ type TagButtonProps = {
   $variant: StyleVariant;
   $size: ElementSize;
   $radius: BorderRadius;
+  as?: 'button' | 'a';
+  href?: string;
+  target?: string;
+  rel?: string;
 };
 
 export const TagButton = styled.button<TagButtonProps>`
