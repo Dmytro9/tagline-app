@@ -11,8 +11,7 @@ export const AppContainer = styled.div`
 export const MainContent = styled.main`
   flex: 1;
   display: flex;
-  padding: 40px;
-  gap: 40px;
+  position: relative;
   margin: 0 auto;
   width: 100%;
   overflow: auto;
@@ -20,12 +19,12 @@ export const MainContent = styled.main`
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 20px;
-    gap: 20px;
   }
 `;
 
 export const PreviewColumn = styled.div`
   flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -35,17 +34,28 @@ export const PreviewColumn = styled.div`
   }
 `;
 
-export const PanelsColumn = styled.div<{ $isCollapsed?: boolean }>`
-  width: ${props => props.$isCollapsed ? '60px' : '280px'};
+export const PanelsColumn = styled.div<{ 
+  $isCollapsed?: boolean; 
+}>`
+  position: fixed;
+  right: ${props => props.$isCollapsed ? '-280px' : '40px'};
+  top: 40px;
+  width: 280px;
+  max-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   gap: 16px;
   flex-shrink: 0;
-  transition: width 0.2s cubic-bezier(0.2, 0.0, 0.3, 1);
+  transition: right 0.3s cubic-bezier(0.2, 0.0, 0.3, 1);
+  z-index: 100;
+  touch-action: none;
+  will-change: transform;
 
   @media (max-width: 768px) {
-    order: 2;
-    width: 100%;
+    right: ${props => props.$isCollapsed ? '-100%' : '20px'};
+    top: 20px;
+    width: calc(100% - 40px);
+    max-width: 320px;
   }
 `;
 

@@ -2,13 +2,14 @@ import { FC, type MouseEvent, useCallback } from "react";
 import { observer } from "mobx-react-lite";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import DragHandleIcon from "@/assets/icons/drag-handle.svg?react";
+import DotsVerticalIcon from "@/assets/icons/dots-vertical.svg?react";
 import CloseIcon from "@/assets/icons/close.svg?react";
 import {
   TagListItem,
   TagListItemLabel,
   DragHandle,
   DeleteButton,
+  HoverArea,
 } from "./index.styles";
 
 type SortableItemProps = {
@@ -55,12 +56,14 @@ export const SortableItem: FC<SortableItemProps> = observer(
         aria-label={`Edit ${item.label}`}
       >
         <DragHandle {...attributes} {...listeners} aria-label={`Drag ${item.label}`}>
-          <DragHandleIcon aria-hidden="true" />
+          <DotsVerticalIcon aria-hidden="true" />
         </DragHandle>
+        <HoverArea>
         <TagListItemLabel>{item.label}</TagListItemLabel>
         <DeleteButton onClick={handleDelete} aria-label={`Delete ${item.label}`}>
           <CloseIcon aria-hidden="true" />
         </DeleteButton>
+      </HoverArea>
       </TagListItem>
     );
   },

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DragHandle = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 8px;
+  width: 6px;
   color: #6a6a6a;
   cursor: grab;
   opacity: 0;
@@ -11,6 +11,10 @@ export const DragHandle = styled.div`
 
   &:active {
     cursor: grabbing;
+  }
+
+  &:hover > div {
+    background-color: #ffffff;
   }
 `;
 
@@ -35,29 +39,38 @@ export const DeleteButton = styled.button`
   padding: 0;
   opacity: 0;
   transition: all 0.2s ease;
-  
+
   &:hover {
     color: #ffffff;
   }
 `;
 
+export const HoverArea = styled.div`
+  padding: 10px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 export const TagListItem = styled.div`
-  padding: 10px 6px;
   border-radius: 6px;
   margin-bottom: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.12);
-    background: #232323;
-    
     ${DragHandle},
     ${DeleteButton} {
       opacity: 1;
+    }
+
+    ${HoverArea} {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: #232323;
     }
   }
 `;

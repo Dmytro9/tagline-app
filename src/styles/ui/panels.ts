@@ -32,10 +32,18 @@ export const PanelHeaderContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: grab;
+  user-select: none;
+  flex: 1;
+  padding: 4px 8px;
+  
+  &:active {
+    cursor: grabbing;
+  }
   
   svg {
     position: relative;
-    top: -10px;
+    top: -14px;
   }
 `;
 
@@ -50,7 +58,7 @@ export const PanelTitle = styled.h3`
 export const PanelContent = styled.div`
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  padding: 14px;
 `;
 
 export const PanelFooter = styled.div`

@@ -67,7 +67,7 @@ export const taglineConfig: ElementConfig<Tag, TaglineStyles> = {
     alignment: 'center',
   },
   styleControls: taglineStyleControls,
-  renderPreview: (items, styles) => {
+  renderPreview: (items, styles, callbacks) => {
     return React.createElement(
       TagContainer,
       { $alignment: styles.alignment },
@@ -76,10 +76,8 @@ export const taglineConfig: ElementConfig<Tag, TaglineStyles> = {
           TagButton,
           {
             key: item.id,
-            as: item.link ? 'a' : 'button',
-            href: item.link || undefined,
-            target: item.link ? '_blank' : undefined,
-            rel: item.link ? 'noopener noreferrer' : undefined,
+            as: 'button',
+            onClick: () => callbacks?.onItemClick?.(item.id),
             $variant: styles.variant,
             $size: styles.size,
             $radius: styles.radius,

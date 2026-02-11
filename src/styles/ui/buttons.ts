@@ -1,5 +1,5 @@
+import { colors } from './../colors';
 import styled, { css } from "styled-components";
-import { colors } from "../colors";
 
 export const IconButton = styled.button<{ $position?: 'left' | 'right' }>`
   background: transparent;
@@ -64,12 +64,17 @@ export const Button = styled.button<{ $variant?: "primary" | "secondary" }>`
 
 export const AddButton = styled(Button)`
   color: ${colors.text.disabled};
-  padding-left: 26px;
+  padding-left: 16px;
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   margin-top: 12px;
+
+  &:hover {
+     background: ${colors.surface.dark};
+     color: ${colors.text.disabled};
+  }
 `;
 
 export const NavigationButton = styled(Button)`

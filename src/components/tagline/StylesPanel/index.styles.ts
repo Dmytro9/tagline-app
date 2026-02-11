@@ -58,7 +58,7 @@ export const StyleVariantButton = styled(OptionButton)<{ $variant?: string }>`
           border: ${$isActive ? "1px solid #ffffff" : "1px solid transparent"};
           color: #ffffff;
           &:hover {
-            background: #30302E;
+            background: #232323;
           }
         `;
       default:

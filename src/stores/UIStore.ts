@@ -1,10 +1,9 @@
 import { makeAutoObservable } from "mobx";
 import type { PanelType, ElementId } from "@/types/elements";
-import { PANEL } from "@/types/elements";
 
 export const createUIStore = () => {
   const store = {
-    currentPanel: PANEL.MAIN as PanelType,
+    currentPanel: null as PanelType,
     editingItemId: null as ElementId | null,
     panelHistory: [] as PanelType[],
 

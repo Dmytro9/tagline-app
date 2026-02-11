@@ -50,7 +50,7 @@ export const Input = styled.input<{ $variant?: "floating" | "default" }>`
   font-size: 14px;
   transition: all 0.2s ease;
   box-sizing: border-box;
-  background: ${colors.surface.base};
+  background: ${colors.autofill.background};
   color: ${colors.text.primary};
 
   &:focus {

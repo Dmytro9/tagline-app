@@ -9,7 +9,7 @@ export const PreviewSection = styled.section`
   border-radius: 12px;
   padding: 120px 40px 60px;
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

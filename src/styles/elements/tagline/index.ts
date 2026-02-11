@@ -4,7 +4,7 @@ import {
   ElementSize,
   BorderRadius,
   Alignment,
-} from "../../../types/elements";
+} from "@/types/elements";
 import { colors } from "../../colors";
 
 type TagContainerProps = {
@@ -76,7 +76,7 @@ const tagVariants = {
     color: ${colors.text.primary};
     border: none;
     &:hover {
-      background: ${colors.surface.base};
+      background: ${colors.surface.dark};
       border-color: ${colors.opacity.white10};
     }
   `,

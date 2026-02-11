@@ -7,6 +7,7 @@ export const colors = {
   // Surface colors
   surface: {
     base: '#2c2c2c',
+    dark: '#232323',
   },
 
   // Text colors

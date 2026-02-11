@@ -22,7 +22,7 @@ export const PanelHeaderComponent: FC<PanelHeaderComponentProps> = ({
   onBack,
 }) => {
   return (
-    <PanelHeader>
+    <PanelHeader data-panel-header>
       {onBack && (
         <IconButton onClick={onBack} $position="left" aria-label="Go back">
           <ArrowLeftIcon aria-hidden="true" />

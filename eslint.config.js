@@ -26,7 +26,10 @@ export default [
         setInterval: 'readonly',
         clearInterval: 'readonly',
         crypto: 'readonly',
-        HTMLInputElement: 'readonly',
+        HTMLInputElement: 'readonly', 
+        HTMLDivElement: 'readonly',
+        PointerEvent: 'readonly',
+        HTMLElement: 'readonly',
       },
     },
     plugins: {

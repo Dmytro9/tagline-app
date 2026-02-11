@@ -50,7 +50,11 @@ export type ElementConfig<
   defaultItem: Omit<TElement, "id">;
   defaultStyles: TStyles;
   styleControls: StyleControl[];
-  renderPreview: (items: TElement[], styles: TStyles) => React.ReactNode;
+  renderPreview: (
+    items: TElement[],
+    styles: TStyles,
+    callbacks?: { onItemClick?: (id: ElementId) => void }
+  ) => React.ReactNode;
   // Optional custom panel components
   MainPanel?: React.ComponentType;
   CreateItemPanel?: React.ComponentType;
