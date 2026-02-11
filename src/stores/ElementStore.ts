@@ -20,20 +20,23 @@ export const createElementStore = <
         ...item,
       } as TElement;
       store.items.push(newItem);
-      store.simulateApiCall("POST", "/api/items", newItem);
+      const baseUrl = elementType ? `/api/${elementType}/items` : "/api/items";
+      store.simulateApiCall("POST", baseUrl, newItem);
     },
 
     updateItem(id: ElementId, updates: Partial<Omit<TElement, "id">>) {
       const index = store.items.findIndex((item) => item.id === id);
       if (index !== -1) {
         store.items[index] = { ...store.items[index], ...updates };
-        store.simulateApiCall("PUT", `/api/items/${id}`, store.items[index]);
+        const baseUrl = elementType ? `/api/${elementType}/items/${id}` : `/api/items/${id}`;
+        store.simulateApiCall("PUT", baseUrl, store.items[index]);
       }
     },
 
     deleteItem(id: ElementId) {
       store.items = store.items.filter((item) => item.id !== id);
-      store.simulateApiCall("DELETE", `/api/items/${id}`, { id });
+      const baseUrl = elementType ? `/api/${elementType}/items/${id}` : `/api/items/${id}`;
+      store.simulateApiCall("DELETE", baseUrl, { id });
     },
 
     reorderItems(startIndex: number, endIndex: number) {
@@ -41,14 +44,16 @@ export const createElementStore = <
       const [removed] = result.splice(startIndex, 1);
       result.splice(endIndex, 0, removed);
       store.items = result;
-      store.simulateApiCall("PUT", "/api/items/reorder", {
+      const baseUrl = elementType ? `/api/${elementType}/items/reorder` : "/api/items/reorder";
+      store.simulateApiCall("PUT", baseUrl, {
         items: store.items,
       });
     },
 
     updateStyles(updates: Partial<TStyles>) {
       store.styles = { ...store.styles, ...updates };
-      store.simulateApiCall("PUT", "/api/styles", store.styles);
+      const baseUrl = elementType ? `/api/${elementType}/styles` : "/api/styles";
+      store.simulateApiCall("PUT", baseUrl, store.styles);
     },
 
     getItemById(id: ElementId): TElement | undefined {
