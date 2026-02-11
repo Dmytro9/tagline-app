@@ -2,6 +2,8 @@
 
 A React application for creating and managing tagline elements with a dynamic settings panel. Built with TypeScript, MobX, and Styled Components featuring a modern dark theme interface.
 
+🌐 **[Live Demo](https://tagline-app.netlify.app/)**
+
 ## 🚀 Features
 
 - **Dark Theme UI** - Modern dark interface with floating panels and radial gradient background
