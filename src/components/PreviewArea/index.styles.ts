@@ -22,4 +22,5 @@ export const PreviewTitle = styled.h2`
   color: #ffffff;
   letter-spacing: -0.5px;
   text-align: center;
+  cursor: pointer;
 `;

@@ -17,7 +17,7 @@ export const PreviewArea: FC = observer(() => {
   return (
     <PreviewWrapper>
       <PreviewSection>
-        <PreviewTitle>{config.displayName} element</PreviewTitle>
+        <PreviewTitle onClick={handleItemClick}>{config.displayName} element</PreviewTitle>
         {config.renderPreview(toJS(items), toJS(styles), {
           onItemClick: handleItemClick,
         })}
